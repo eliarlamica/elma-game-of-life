@@ -5,9 +5,11 @@
 #game_of_life_board_size = input("enter the board size?")
 
 game_of_life_matrix = [
-    [0, 1, 0],
-    [0, 0, 1],
-    [0, 1, 1]
+    [0, 1, 0, 1, 1],
+    [0, 0, 1, 0, 1],
+    [0, 1, 1, 0, 0],
+    [0, 0, 0, 0, 0],
+    [0, 1, 1, 1, 0]
 ]
 
 for index, cell in enumerate(game_of_life_matrix):
@@ -17,7 +19,7 @@ for index, cell in enumerate(game_of_life_matrix):
         neighbours_array = []
 
         if index - 1 >= 0 and index2 - 1 >= 0:
-            neighbours_array.append(game_of_life_matrix[index - 1][index2 - 1])
+                neighbours_array.append(game_of_life_matrix[index - 1][index2 - 1])
 
         if index - 1 >= 0:
             neighbours_array.append(game_of_life_matrix[index - 1][index2])
@@ -46,7 +48,33 @@ for index, cell in enumerate(game_of_life_matrix):
         # print(index2 - 1)
         # print(cell[index2 - 1])
             
-        print(neighbours_array)
+        ##print(neighbours_array)
+
+        count = 0
+        for liveordead in neighbours_array:
+            if liveordead == 1:
+                count += 1
+
+        if game_of_life_matrix[index][index2] == 0:
+            if count == 3:
+                game_of_life_matrix[index][index2] = 1
+                #print("debug1")
+            else:
+                game_of_life_matrix[index][index2] = 0
+                #print("debug2")
+
+        if game_of_life_matrix[index][index2] == 1:
+            if count == 2 or count == 3:
+                game_of_life_matrix[index][index2] = 1
+                #print("debug3")
+            else: 
+                game_of_life_matrix[index][index2] = 0
+                #print("debug4")
+        #print("sdfasdgvaev") 
+
+print(game_of_life_matrix)
+            
+            
 
 
 
