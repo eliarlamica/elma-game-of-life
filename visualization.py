@@ -21,7 +21,7 @@ class WorldCanvas():
 
         self.canvas = figure(plot_width=self.canvas_width, plot_height=self.canvas_height)
         self.add_buttons()
-        self.add_cells();
+        self.add_cells()
 
     def add_buttons(self):
         next_turn_button = Button(label="Next Turn")
