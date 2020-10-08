@@ -12,12 +12,6 @@ game_of_life_matrix = [
 
 game_of_life_matrix_new_cell_state = copy.deepcopy(game_of_life_matrix)
 
-#game_of_life_matrix_new_cell_state = [
-#    [0, 1, 0],
-#    [0, 1, 0],
-#    [0, 1, 0],
-#]
-
 def get_game_world():
     for index, cell in enumerate(game_of_life_matrix):
         for index2, cell2 in enumerate(cell):
@@ -59,17 +53,12 @@ def get_game_world():
                     print("thisisif1")
                 else:
                     game_of_life_matrix_new_cell_state[index][index2] = 0
-                    print("thisisif2")
 
             if game_of_life_matrix[index][index2] == 1:
                 if count == 2 or count == 3:
                     game_of_life_matrix_new_cell_state[index][index2] = 1
-                    print("thisisif3")
                 else:
                     game_of_life_matrix_new_cell_state[index][index2] = 0
-                    print("thisisif3")
-
-
 
     return game_of_life_matrix
 
