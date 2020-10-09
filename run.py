@@ -10,3 +10,9 @@ game_logic.init_world(world_size_x, world_size_y)
 visualization.init_canvas()
 
 print("Game Of Life work finished. Thank You for Your time!")
+
+# TODO:
+# 1) Next Turn Fix.
+# 2) Separate random matrix generation from init_world.
+# 3) ReadMe.
+# 4) Clean Code & Code Review.
