@@ -48,13 +48,13 @@ def get_next_turn_world():
             if index2 + 1 <= len(cell)-1:
                 neighbours_array.append(game_of_life_matrix[index][index2 + 1])
 
-            if index2 - 1 >= 0 and index + 1 <= len(cell)-1:
+            if index2 - 1 >= 0 and index + 1 <= len(game_of_life_matrix)-1:
                 neighbours_array.append(game_of_life_matrix[index + 1][index2 - 1])
 
-            if index + 1 <= len(cell)-1:
+            if index + 1 <= len(game_of_life_matrix)-1:
                 neighbours_array.append(game_of_life_matrix[index + 1][index2])
 
-            if index + 1 <= len(cell)-1 and index2 + 1 <= len(cell)-1:
+            if index + 1 <= len(game_of_life_matrix)-1 and index2 + 1 <= len(cell)-1:
                 neighbours_array.append(game_of_life_matrix[index + 1][index2 + 1])
 
             count = 0
@@ -72,7 +72,7 @@ def get_next_turn_world():
                 if count == 2 or count == 3:
                     temp_matrix[index][index2] = 1
                 else:
-                   temp_matrix[index][index2] = 0
+                    temp_matrix[index][index2] = 0
 
     game_of_life_matrix = copy.deepcopy(temp_matrix)           
     return game_of_life_matrix

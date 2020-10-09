@@ -70,7 +70,7 @@ def next_turn():
 
 def start_auto_turn():
     global _callback_id
-    _callback_id = curdoc().add_periodic_callback(next_turn(), 500)
+    _callback_id = curdoc().add_periodic_callback(next_turn, 500)
 
 def stop_auto_turn():
     global _callback_id
