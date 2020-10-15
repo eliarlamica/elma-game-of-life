@@ -10,11 +10,11 @@ Bokeh is an interactive visualization library; provides construction of versatil
 
 ## How to use?
 
-*install bokeh*: 
+Install bokeh: 
 ```
 pip install bokeh
 ```
-*start server*: 
+Start server: 
 ``` 
 bokeh serve --show run.py
 ```
