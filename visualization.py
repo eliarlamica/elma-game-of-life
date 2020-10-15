@@ -78,4 +78,4 @@ def stop_auto_turn():
 
 def init_canvas(canvas_width = 400, canvas_height = 400, size_of_cell = 20):
     global _world_canvas
-    _world_canvas = WorldCanvas(canvas_width, canvas_height, size_of_cell, ("red", 0.5), ("black", 0.2))
+    _world_canvas = WorldCanvas(canvas_width, canvas_height, size_of_cell, ("yellow", 0.5), ("purple", 0.2))
