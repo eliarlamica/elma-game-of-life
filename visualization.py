@@ -1,4 +1,3 @@
-
 from bokeh.plotting import figure, curdoc
 from bokeh.models import Button
 from bokeh.layouts import column
@@ -50,12 +49,16 @@ def next_turn():
     live_cells_y = []
     dead_cells_x = []
     dead_cells_y = []
+    all_cells_x = []
+    all_cells_y = []
 
     game_world = get_next_turn_world()
 
     global _world_canvas
     for x, row in enumerate(game_world):
         for y, cell in enumerate(row):
+            all_cells_x.append(x*_world_canvas.cell_size)
+            all_cells_y.append(y*_world_canvas.cell_size)
             if cell == 1:
                 live_cells_x.append(x*_world_canvas.cell_size)
                 live_cells_y.append(y*_world_canvas.cell_size)
@@ -63,10 +66,13 @@ def next_turn():
                 dead_cells_x.append(x*_world_canvas.cell_size)
                 dead_cells_y.append(y*_world_canvas.cell_size)
 
-    _world_canvas.alive_cells_data.data['y'] = live_cells_x
-    _world_canvas.alive_cells_data.data['x'] = live_cells_y
-    _world_canvas.dead_cells_data.data['y'] = dead_cells_x
-    _world_canvas.dead_cells_data.data['x'] = dead_cells_y
+    all_cells_data = {'x': all_cells_x, 'y': all_cells_y}
+    _world_canvas.dead_cells_data.data = all_cells_data
+    dead_cells_data = {'x': dead_cells_x, 'y': dead_cells_y}
+    _world_canvas.dead_cells_data.data = dead_cells_data
+    live_cells_data = {'x': live_cells_x, 'y': live_cells_y}
+    _world_canvas.alive_cells_data.data = live_cells_data
+
 
 def start_auto_turn():
     global _callback_id
