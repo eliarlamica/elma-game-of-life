@@ -17,7 +17,7 @@ class WorldCanvas:
         self.canvas_height = canvas_height
 
         self.canvas = figure(
-            plot_width=self.canvas_width, plot_height=self.canvas_height
+            width=self.canvas_width, height=self.canvas_height
         )
         self.add_buttons()
         self.add_cells()

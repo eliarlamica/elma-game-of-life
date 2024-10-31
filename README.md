@@ -15,7 +15,7 @@ pip install bokeh
 ```
 Start server: 
 ``` 
-bokeh serve --show run.py
+bokeh serve --show main.py
 ```
 
 Just put the size of the matrix and observe enchanting patterns of cell population development following simple [rules](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life).

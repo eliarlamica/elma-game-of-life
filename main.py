@@ -15,4 +15,7 @@ def main():
 
 
 if __name__ == "__main__":
+    print("Error, main.py must be launched via bokeh, not directly!")
+    print("bokeh serve --show main.py")
+else:
     main()
